@@ -1,4 +1,6 @@
-*typical checklist for Python projects*
+*checklist for Python projects*
+
+* [ ] #0 run `black --check --diff`
 
 * [ ] #1 argparse help for humans ([gitless](https://github.com/sdg-mit/gitless/pull/139/files))
 
