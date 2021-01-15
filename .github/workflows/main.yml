@@ -17,6 +17,7 @@ jobs:
       - uses: actions/checkout@v2
 
       - run: |
+          pip install coverage
           coverage run python.py
           coverage report
           coverage html -d public_html
