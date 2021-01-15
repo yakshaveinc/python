@@ -10,14 +10,14 @@ on:
 
 jobs:
   coverage:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-20.04
 
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
 
+      - run: pip install coverage -vvv
       - run: |
-          pip install coverage
           coverage run python.py
           coverage report
           coverage html -d public_html
