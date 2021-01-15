@@ -16,7 +16,10 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
 
-      - run: pip install coverage -vvv
+      - run: |
+          pip install coverage
+          # Set $PATH until https://github.com/actions/virtual-environments/issues/2455
+          echo "$HOME/.local/bin" >> $GITHUB_PATH
       - run: |
           coverage run python.py
           coverage report
