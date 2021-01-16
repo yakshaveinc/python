@@ -25,7 +25,7 @@ jobs:
       - run: |
           pip install coverage
           # Set $PATH until https://github.com/actions/virtual-environments/issues/2455
-          echo "$HOME/.local/bin" >> $GITHUB_PATH
+          #echo "$HOME/.local/bin" >> $GITHUB_PATH
       - run: |
           coverage run python.py
           coverage report
@@ -39,13 +39,14 @@ jobs:
     needs: coverage-build
     runs-on: ubuntu-20.04
     steps:
+      - uses: actions/checkout@v2
       - uses: actions/download-artifact@v2
       - run: |
           pip install coverage
           ls -la
           cd artifact
           ls -la
-          python -m coverage combine
+          python -m coverage combine artifact/
           python -m coverage report
           python -m coverage html -d public_html
       - uses: JamesIves/github-pages-deploy-action@3.7.1
