@@ -36,6 +36,7 @@ jobs:
           path: .coverage.${{ matrix.python-version }}
 
   coverage-report:
+    needs: coverage-build
     runs-on: ubuntu-20.04
     steps:
       - uses: actions/download-artifact@v2
