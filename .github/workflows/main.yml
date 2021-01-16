@@ -9,7 +9,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  coverage:
+  coverage-build:
     runs-on: ubuntu-20.04
     strategy:
       matrix:
@@ -29,8 +29,21 @@ jobs:
       - run: |
           coverage run python.py
           coverage report
-          coverage html -d public_html
+          mv .coverage .coverage.${{ matrix.python-version }}
 
+      - uses: actions/upload-artifact@v2
+        with:
+          path: .coverage.${{ matrix.python-version }}
+
+  coverage-report:
+    runs-on: ubuntu-20.04
+    steps:
+      - uses: actions/download-artifact@v2
+      - run: |
+          ls -la
+          coverage combine
+          coverage report
+          coverage html -d public_html
       - uses: JamesIves/github-pages-deploy-action@3.7.1
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
