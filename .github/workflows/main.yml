@@ -46,9 +46,9 @@ jobs:
           pip install coverage
       - run: |
           ls -la artifact
-          python -m coverage combine artifact/
-          python -m coverage report
-          python -m coverage html -d public_html
+          coverage combine artifact/
+          coverage report
+          coverage html -d public_html
       - uses: JamesIves/github-pages-deploy-action@3.7.1
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
