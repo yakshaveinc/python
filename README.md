@@ -2,7 +2,7 @@
 
 * [ ] #0 run `black --check --diff`
 
-* [ ] #1 argparse help for humans ([gitless](https://github.com/sdg-mit/gitless/pull/139/files))
+* [ ] #1 argparse help for humans ([gitless](https://github.com/sdg-mit/gitless/pull/139/files), [podman-compose](https://github.com/containers/podman-compose/pull/359/files))
 
 * [ ] #2 Sphinx theme customizations
   - replace `View Source` link with `Edit` ([release-monitoring](https://github.com/release-monitoring/anitya/pull/693))
