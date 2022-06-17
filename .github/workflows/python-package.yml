@@ -1,0 +1,14 @@
+name: Default Python versions
+
+on:
+  workflow_dispatch:
+  
+jobs:
+  defaults:
+    strategy:
+      matrix:
+        os: [macos-latest, ubuntu-latest, windows-latest]
+    runs-on: ${{ matrix.os }}
+    steps:
+    - run: python --version
+    - run: python3 --version
