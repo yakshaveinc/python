@@ -9,5 +9,6 @@
   - link references to tracker and merge requests ([airflow](https://github.com/apache/airflow/pull/4587))
 
 * [x] Run `coverage.py` and publish current report to GitHub Pages (https://yakshaveinc.github.io/python/)
+  * [ ] Make it [reusable workflow](https://github.blog/2022-02-10-using-reusable-workflows-github-actions/) or an action that writes to `gh-pages` and/or `data` branch
 
 See also https://github.com/yakshaveinc/python/issues?q=label%3Achecklist
