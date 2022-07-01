@@ -13,4 +13,5 @@ jobs:
     - run: python --version
     - run: python3 --version
     - run: python3 -c "import sys; print(sys.stdout.isatty())"
+    - run: pip list
     
